@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useEffect, useLayoutEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion, useMotionValue, useSpring, useTransform } from 'motion/react';
+import { withBasePath } from '@/lib/paths';
 
 const navItems = [
   ['Work', '/projects'],
@@ -68,7 +69,7 @@ export function Header() {
         <div className="container flex items-center justify-between py-5 md:py-6">
           <motion.div className="site-logo-wrap" style={{ opacity: fixedOpacity ?? logoOpacity }}>
             <Link href="/" className="site-logo" onClick={() => setMenuOpen(false)}>
-              <Image src="/logo/spaceworks-logo.svg" alt="Spaceworks — Design & Build" width={916} height={192} className="site-logo-image" priority />
+              <Image src={withBasePath('/logo/spaceworks-logo.svg')} alt="Spaceworks — Design & Build" width={916} height={192} className="site-logo-image" priority />
             </Link>
           </motion.div>
           <motion.nav className="site-nav hidden md:flex items-center gap-7 text-[10px] uppercase tracking-[.16em]" style={{ opacity: fixedOpacity ?? navigationOpacity, visibility: navigationActive ? 'visible' : 'hidden' }}>
@@ -100,7 +101,7 @@ function MenuOverlay({ open, onClose }: { open: boolean; onClose: () => void }) 
           <div className="container w-full">
             <div className="flex items-center justify-between mb-14">
               <Link href="/" onClick={onClose} className="font-bold text-xl tracking-[-.05em]">
-                <Image src="/logo/spaceworks-logo.svg" alt="Spaceworks — Design & Build" width={916} height={192} className="menu-logo-image" />
+                <Image src={withBasePath('/logo/spaceworks-logo.svg')} alt="Spaceworks — Design & Build" width={916} height={192} className="menu-logo-image" />
               </Link>
               <button type="button" onClick={onClose} className="uppercase tracking-[.15em] text-[10px]">Close ×</button>
             </div>
@@ -160,7 +161,7 @@ export function Footer() {
       <div className="container footer-inner">
         <div className="footer-main">
           <Link href="/" aria-label="Spaceworks home">
-            <Image src="/logo/spaceworks-logo.svg" alt="Spaceworks — Design & Build" width={916} height={192} className="footer-logo-image" />
+            <Image src={withBasePath('/logo/spaceworks-logo.svg')} alt="Spaceworks — Design & Build" width={916} height={192} className="footer-logo-image" />
           </Link>
           <div className="footer-social">
             <span className="footer-social-label">Social</span>

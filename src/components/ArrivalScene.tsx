@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { motion, useReducedMotion, useSpring, useTransform } from 'motion/react';
 import type { PointerEvent } from 'react';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { withBasePath } from '@/lib/paths';
 
 const mapProgress = (value: number, start: number, end: number, from: number, to: number) => {
   const progress = Math.min(1, Math.max(0, (value - start) / (end - start)));
@@ -123,12 +124,12 @@ export function ArrivalScene() {
         <motion.div className="arrival-grid" style={{ x: reduceMotion ? 0 : gridX, y: reduceMotion ? 0 : gridY }} aria-hidden="true" />
         <div className="arrival-sketch" style={{ maskImage: sketchMask, WebkitMaskImage: sketchMask }} aria-hidden="true">
           <motion.div className="arrival-sketch-art" style={{ x: reduceMotion ? 0 : sketchX, y: reduceMotion ? 0 : sketchY }}>
-            <object type="image/svg+xml" data="/sketch-rise.svg" aria-label="Animated architectural sketch" />
+            <object type="image/svg+xml" data={withBasePath('/sketch-rise.svg')} aria-label="Animated architectural sketch" />
           </motion.div>
         </div>
         <motion.div className="arrival-veil" style={{ opacity: veilOpacity }} aria-hidden="true" />
         <motion.div className="arrival-copy" style={{ scale: wordmarkScale, x: wordmarkX, y: wordmarkY, opacity: wordmarkOpacity }}>
-          <h1><Image src="/logo/spaceworks-logo.svg" alt="SPACEWORKS — Design & Build" width={916} height={192} priority /></h1>
+          <h1><Image src={withBasePath('/logo/spaceworks-logo.svg')} alt="SPACEWORKS — Design & Build" width={916} height={192} priority /></h1>
           <p className="arrival-services">Architecture <i>·</i> Interior Design <i>·</i> Commercial Fitout <i>·</i> Landscape Design <i>·</i> PMC <i>·</i> Turnkey</p>
           <Link href="#introduction" className="arrival-scroll" tabIndex={0}>Scroll to explore <span>↓</span></Link>
         </motion.div>

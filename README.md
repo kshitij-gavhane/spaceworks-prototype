@@ -24,6 +24,14 @@ npm run dev
 
 Open http://localhost:3000.
 
+## Deploy on GitHub Pages
+
+The `prototype-v3` branch deploys automatically to GitHub Pages after changes are pushed. The workflow builds a static export under the repository base path.
+
+In the repository settings, set **Pages → Build and deployment → Source** to **GitHub Actions**. Once the workflow completes, the site is available at:
+
+https://kshitij-gavhane.github.io/spaceworks-prototype/
+
 ## Run backend
 
 ```bash
