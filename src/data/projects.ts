@@ -1,18 +1,17 @@
 export type Project = {
   slug: string;
   title: string;
-  location: string;
   type: string;
-  year: string;
-  area: string;
-  accent: 'sand' | 'clay' | 'olive';
+  excerpt: string;
+  image: string;
+  imageAlt: string;
 };
 
 export const projects: Project[] = [
-  { slug: 'courtyard-house', title: 'The Courtyard House', location: 'Pune, Maharashtra', type: 'Residential', year: '2025', area: '3,800 sq.ft.', accent: 'sand' },
-  { slug: 'casa-verde', title: 'Casa Verde', location: 'Alibaug, Maharashtra', type: 'Residential', year: '2025', area: '4,600 sq.ft.', accent: 'clay' },
-  { slug: 'urban-frame', title: 'Urban Frame', location: 'Mumbai, Maharashtra', type: 'Residential', year: '2024', area: '5,200 sq.ft.', accent: 'olive' },
-  { slug: 'atrium-office', title: 'The Atrium Office', location: 'Pune, Maharashtra', type: 'Commercial', year: '2024', area: '7,800 sq.ft.', accent: 'sand' },
-  { slug: 'aranya-retreat', title: 'Aranya Retreat', location: 'Lonavala, Maharashtra', type: 'Hospitality', year: '2023', area: '9,400 sq.ft.', accent: 'clay' },
-  { slug: 'garden-pavilion', title: 'Garden Pavilion', location: 'Nashik, Maharashtra', type: 'Landscape', year: '2023', area: '12,000 sq.ft.', accent: 'olive' },
+  { slug: 'courtyard-house', title: 'The Courtyard House', type: 'Residential', excerpt: 'A climate-conscious home organised around a quiet internal court.', image: '/images/inspiration/courtyard-house.jpg', imageAlt: 'Contemporary timber and glass home set among mature trees' },
+  { slug: 'casa-verde', title: 'Casa Verde', type: 'Residential', excerpt: 'A relaxed weekend house with deep thresholds between indoors and landscape.', image: '/images/inspiration/living-space.jpg', imageAlt: 'Contemporary living room arranged around daylight and natural materials' },
+  { slug: 'urban-frame', title: 'Urban Frame', type: 'Residential', excerpt: 'A compact urban residence shaped around privacy, light and framed views.', image: '/images/inspiration/architecture-exterior.jpg', imageAlt: 'Sculptural contemporary building with a glass and metal facade' },
+  { slug: 'atrium-office', title: 'The Atrium Office', type: 'Commercial', excerpt: 'A work environment using an internal atrium to make daylight the organiser.', image: '/images/inspiration/workplace.jpg', imageAlt: 'Modern glass-and-steel workplace architecture' },
+  { slug: 'aranya-retreat', title: 'Aranya Retreat', type: 'Hospitality', excerpt: 'A low-key retreat that keeps built form close to the terrain and trees.', image: '/images/inspiration/landscape.jpg', imageAlt: 'Sunlight filtering through a dense green woodland' },
+  { slug: 'garden-pavilion', title: 'Garden Pavilion', type: 'Landscape', excerpt: 'A landscape-led pavilion connecting arrival, shade, planting and gathering.', image: '/images/inspiration/architecture-study.jpg', imageAlt: 'Interior architectural study with glazed partitions and warm finishes' },
 ];
